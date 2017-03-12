@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <style>
+            .colorodd{
+                background-color: #66ff99 !important;
+                
+            }
+            .coloreven{
+                background-color: #ff9966 !important;
+            }
+            [ng\:cloak], [ng-cloak], .ng-cloak{
+                display: none;
+            };
+        </style>
+    </head>
+    <body ng-app="myapp" ng-init="welcome = {message:'Manage my store'};">
+        <h2 ng-bind="welcome.message"></h2><hr>
+        <div ng-controller="gethero" class="container">
+            <label>Enter Name of Character:</label>
+            <input type="text" ng-model="heroitem">
+            <input type="button" ng-click="searchhero(heroitem)" value="Get Hero Details">
+            <br><br>
+            <span>{{serachresult}}</span>
+          
+        </div><br>
+        <div ng-controller="gethero" class="container">
+            <label>Enter Character Name to Add</label><br><input type="text" ng-model="herocharacter"><br>
+            
+            <label>Enter Real name of character</label><br><input type="text" ng-model="realcharacter">
+            <br><br>
+            <input type="button" ng-click="saveheroname(herocharacter,realcharacter)" value="Save Hero Details">
+                </div>
+               
+            
+        
+    </body>
+    <script type="text/javascript" src="test4.js"></script>
+</html>

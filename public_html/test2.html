@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="angular.min.js"></script>
+        <style>
+            .colorodd{
+                background-color: #66ff99 !important;
+                
+            }
+            .coloreven{
+                background-color: #ff9966 !important;
+            }
+            [ng\:cloak], [ng-cloak], .ng-cloak{
+                display: none;
+            };
+        </style>
+    </head>
+    <body ng-app="myapp" ng-init="welcome = {message:'Manage my store'};">
+        <h2 ng-bind="welcome.message"></h2><hr>
+        <div ng-controller="example2" class="container">
+            <input type="text" ng-model="itemname" placeholder="Search" class="form-control">
+            <table class="table table-stripped">
+                <thead>
+                <th>Item Name</th>
+                <th>Purchased</th>
+                </thead>
+                <tr ng-repeat="grocery in groceries | orderBy: 'name' | filter: itemname"
+                    ng-class-even="coloreven" ng-class-odd="colorodd">
+                    <td>{{grocery.name | uppercase}} </td>
+                    <td><input type="checkbox" ng-model="grocery.purchased"> </td>
+                </tr>
+            </table>
+            
+            <input type="text" ng-model="newitem"
+                   ng-click="clickval = clickval + 1"
+                   ng-dblclick="dbclickval = dbclickval + 1"
+                   class="form-control" style="width:200px;margin-bottom: 15px;">
+            <input type="button" class="btn btn-default" value="Add Item" ng-disabled="hidebutton" 
+                   ng-click="saveitem(newitem)">
+            <label>
+                Disable Button:
+                <input type="checkbox" ng-model="hidebutton">
+            </label>
+            <h4 ng-bind="messageerrordetails"></h4>
+            Click: <span ng-bind="clickval"></span>
+            Double Click: <span ng-bind="dbclickval"></span>
+        </div>
+    </body>
+    <script type="text/javascript" src="main.js"></script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <style>
+            .colorodd{
+                background-color: #66ff99 !important;
+                
+            }
+            .coloreven{
+                background-color: #ff9966 !important;
+            }
+            [ng\:cloak], [ng-cloak], .ng-cloak{
+                display: none;
+            };
+        </style>
+    </head>
+    <body ng-app="myapp" ng-init="welcome = {message:'Manage my store'};">
+        <h2 ng-bind="welcome.message"></h2><hr>
+        <div ng-controller="getfirstanimaldetails as first" class="container">
+            Name of animal:<span ng-bind="first.name"></span>
+            <br>Sound of Animal:<span ng-bind="first.sound"></span>
+            <br>
+            <input type="button" value="Get First Animal" ng-click="first.getsound()">
+        </div><br>
+        <div ng-controller="getsecondanimaldetails as second" class="container">
+            Name of Animal:<span ng-bind="second.child.name"></span>
+            <br>Sound of Animal:<span ng-bind="second.child.sound"></span>
+            <br><br>
+            <input type="button" ng-click="second.child.dogdata()" value="Second Animal Details">
+            <br>
+            <input type="button" ng-click="second.child.getsound()" value="The Value for the first">
+                </div>
+               
+            
+        
+    </body>
+    <script type="text/javascript" src="test5.js"></script>
+</html>

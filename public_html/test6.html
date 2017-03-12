@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <style>
+            .colorodd{
+                background-color: #66ff99 !important;
+                
+            }
+            .coloreven{
+                background-color: #ff9966 !important;
+            }
+            [ng\:cloak], [ng-cloak], .ng-cloak{
+                display: none;
+            };
+        </style>
+    </head>
+    <body ng-app="myapp" ng-init="welcome = {message:'Manage my store'};">
+        
+        <div ng-controller="mainCtrl" class="container">
+            <h2 >{{welcome.message}} - Today is {{currDate | date:'medium'}}</h2><hr>
+            <input type="text" ng-model="myname"><br>
+            <span>My Name in Caps:{{myname | uppercase}}</span><br>
+            <span>My Name in Lower Case: {{myname | lowercase}}</span><br><br>
+            
+            <input type="text" ng-model="mynumber"><br>
+            <span>My Currency is : {{mynumber | currency}}</span><br>
+           
+            <input type="text" ng-model="number">
+            <br><span>Number Default {{number | number}}</span><br>
+            <span>Number in decs {{number | number:0}}</span>
+            <br><span>Number Negative {{-number | number:4}}</span>
+            <ul>
+                <li ng-repeat="item in weather">
+                    {{item.day}}-{{item.rain | newfilter}}
+                </li>
+            </ul>
+            <ul>
+                <li ng-repeat="item in student.gpas | orderBy:'-gpa' | limitTo:3" >
+                    {{item.name}} - {{item.gpa}}
+                </li>
+            </ul>
+        </div><br>
+       
+               
+            
+        
+    </body>
+    <script type="text/javascript" src="test6.js"></script>
+    <script type="text/javascript" src="filter.js"></script>
+</html>
